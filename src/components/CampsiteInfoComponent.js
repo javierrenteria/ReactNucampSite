@@ -23,11 +23,29 @@ class CampsiteInfo extends Component {
         );
     }
 
+    renderComments(comments){
+        if(comments){
+            return(
+                <div className="col-md-5 m-1">
+                    <h4>Comments</h4>
+                    {comments.map( c => 
+                    <div>
+                        <p>{c.text} <br/> -- {c.author} {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(c.date)))}
+</p> 
+                    </div>
+                    )};
+                </div>
+            );
+        }
+        return <div></div>;
+    }
+
     render() {
         if(this.props.campsite != null){
             return(
                 <div className="row">
                     {this.renderCampsite(this.props.campsite)}
+                    {this.renderComments(this.props.campsite.comments)}
                 </div>
             );
         }else {
