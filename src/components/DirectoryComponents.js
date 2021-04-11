@@ -1,33 +1,31 @@
-import  React, { Component } from 'react';
+import React, { Component } from 'react';
 import CampsiteInfo from '/Users/javierrenteria/Desktop/NucampFolder/3-React/nucampsite/src/components/CampsiteInfoComponent.js';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 
 class Directory extends Component {
-    constructor(props) { //props = properties
+    constructor(props) {
         super(props);
-        this.state = { //state property always needs to hold an object
+        this.state = {
             selectedCampsite: null
-        }; 
-
+        };
     }
 
     onCampsiteSelect(campsite) {
         this.setState({selectedCampsite: campsite});
     }
 
-
     render() {
         const directory = this.props.campsites.map(campsite => {
-            return(
+            return (
                 <div key={campsite.id} className="col-md-5 m-1">
-                    <Card onClick={() => this.onCampsiteSelect(campsite)} >
-                        <CardImg width = "100%" src={campsite.image} alt={campsite.name}></CardImg>
+                    <Card onClick={() => this.onCampsiteSelect(campsite)}>
+                        <CardImg width="100%" src={campsite.image} alt={campsite.name} />
                         <CardImgOverlay>
                             <CardTitle>{campsite.name}</CardTitle>
                         </CardImgOverlay>
                     </Card>
                 </div>
-            )
+            );
         });
 
         return (
