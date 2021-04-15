@@ -14,11 +14,11 @@ class CampsiteInfo extends Component {
                             <br/> 
                             -- {c.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(c.date)))} </p>
                         </div>               
-                        )};
+                    )};
                 </div>
             );
         }
-        return <div/>;
+        return <div/>
     }
 
     renderCampsite(campsite){
@@ -38,9 +38,11 @@ class CampsiteInfo extends Component {
     render() {
             if(this.props.campsite != null) {
                 return (
-                    <div className="row">
-                        {this.renderCampsite(this.props.campsite)}
-                        {this.renderComments(this.props.campsite.comments)}
+                    <div className="container">
+                        <div className="row">
+                            {this.renderCampsite(this.props.campsite)}
+                            {this.renderComments(this.props.campsite.comments)}
+                        </div>
                     </div>
                 );
                 } else {
