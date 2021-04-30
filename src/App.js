@@ -7,7 +7,7 @@ import './App.css';
 
 const store = ConfigureStore();
 
-class App extends Component {
+export class App extends Component {
   render() {
       return (
         <Provider store={store}>

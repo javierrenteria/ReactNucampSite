@@ -1,8 +1,6 @@
-import React from 'react';
-import {
-    Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem,
-    Button, Modal, ModalHeader, ModalBody, Label
-} from 'reactstrap';
+import React, { Component } from 'react';
+import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem,
+    Button, Modal, ModalHeader, ModalBody, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
@@ -97,7 +95,7 @@ function CampsiteInfo(props) {
         }
     }
 
-    class CommentForm extends React.Component {
+    class CommentForm extends Component {
         constructor(props) {
             super(props);
 
